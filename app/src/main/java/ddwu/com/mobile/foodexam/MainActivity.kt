@@ -15,6 +15,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+			val food = intent.getSerializable("food") as FoodDto
+
         val foods = FoodDao().foods
 
         val layoutManager = LinearLayoutManager(this)
@@ -24,7 +26,8 @@ class MainActivity : AppCompatActivity() {
 
         binding.recyclerView.layoutManager = layoutManager
         binding.recyclerView.adapter = adapter
-
+			
+			binding.tvText.text = food.food
         // btnAdd를 클릭하면 AddFoodActivity 실행
 				binding.btnAdd.setOnClilckListener{
 					val intent = Intent(this, AddFoodActivity::class.java)
