@@ -27,7 +27,9 @@ class MainActivity : AppCompatActivity() {
 
         // btnAdd를 클릭하면 AddFoodActivity 실행
 				binding.btnAdd.setOnClilckListener{
+				val dto = FoodDto(R.mipmap.ic_launcher, "치킨", 10) 
 					val intent = Intent(this, AddFoodActivity::class.java)
+				intent.putExtra("food", dto)
 					startActivityForResult(intent, DETAIL_ACTIVITY_CODE)
 				}
 
