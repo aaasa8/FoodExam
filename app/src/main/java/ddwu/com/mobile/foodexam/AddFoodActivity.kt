@@ -12,6 +12,17 @@ class AddFoodActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAddFoodBinding.inflate(layoutInflater)
         setContentView(binding.root)
+		
+			binding.btnOk.setOnClickListener{
+				val resultIntent = Intent()
+				resultIntent.putExtra("result_data", "DetailActivity returns data!")
+				setResult(RESULT_OK, resultIntent)
+				finish()
+			}
+			binding.btnCancel.setOnClickListener{
+				setResult(RESULT_CANCELED)
+				finish()
+			}
 
     }
 }
