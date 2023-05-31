@@ -25,6 +25,11 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerView.adapter = adapter
 
         // btnAdd를 클릭하면 AddFoodActivity 실행
+				binding.btnAdd.setOnClilckListener{
+					val intent = Intent(this, AddFoodActivity::class.java)
+					intent.
+					startActivity(intent)
+				}
 
     }
 }
