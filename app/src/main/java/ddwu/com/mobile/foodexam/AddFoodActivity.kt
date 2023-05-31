@@ -14,7 +14,7 @@ class AddFoodActivity : AppCompatActivity() {
         setContentView(binding.root)
 		
 			binding.btnSave.setOnClickListener{
-				val dto = FoodDto(R.mipmap.ic_launcher, " ", )
+				val dto = FoodDto(R.mipmap.ic_launcher, binding., binding.)
 				val intent = Intent(this, ::class.java)
 				intent.putExtra("food", dto)
 				resultIntent.putExtra("result_data", "DetailActivity returns data!")
