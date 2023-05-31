@@ -8,6 +8,7 @@ import ddwu.com.mobile.foodexam.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     val TAG = "MainActivity"
     lateinit var binding : ActivityMainBinding
+		val DETAIL_CODE = 10
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,9 +28,21 @@ class MainActivity : AppCompatActivity() {
         // btnAdd를 클릭하면 AddFoodActivity 실행
 				binding.btnAdd.setOnClilckListener{
 					val intent = Intent(this, AddFoodActivity::class.java)
-					intent.
-					startActivity(intent)
+					startActivityForResult(intent, DETAIL_ACTIVITY_CODE)
 				}
 
     }
+	override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?){
+		when(requestCode) {
+			DETAIL_ACTIVITY_CODE -> {
+				if(resultCode == RESULT_OK){
+					val result = data?.getStringExtra("result_data")
+
+				}
+			}
+		}
+	}
+
+
+
 }
